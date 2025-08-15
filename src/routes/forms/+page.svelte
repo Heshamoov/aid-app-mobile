@@ -203,7 +203,7 @@
 			{#each forms as form (form.id)}
 				<div class="card">
 					<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-						<div style="flex: 1; cursor: pointer;" on:click={() => openForm(form.id)}>
+						<button type="button" class="w-full text-left" on:click={() => openForm(form.id)}>
 							<h3 class="font-bold">{form.formName}</h3>
 							<p class="text-gray-600">{form.questions?.length || 0} questions</p>
 							{#if downloadedForms.includes(form.id)}
@@ -211,7 +211,7 @@
 							{:else}
 								<p class="text-gray-500 text-sm">⚠️ Not downloaded - requires internet</p>
 							{/if}
-						</div>
+						</button>
 						<div style="font-size: 1.5rem; margin-left: 1rem;">▶️</div>
 					</div>
 					
