@@ -1,9 +1,13 @@
 import PocketBase from 'pocketbase';
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
+import { PUBLIC_PB_URL } from '$env/static/public';
 
-// Point this to your PocketBase instance
-export const pb = new PocketBase('http://127.0.0.1:8090');
+// Point this to your PocketBase instance locally
+//export const pb = new PocketBase('http://127.0.0.1:8090');
+
+// Online production
+export const pb = new PocketBase(PUBLIC_PB_URL);
 
 // Create stores for authentication and offline data
 export const authStore = writable({ user: null });
